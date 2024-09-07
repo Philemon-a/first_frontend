@@ -2,13 +2,13 @@ import React from "react";
 
 const MovieCard = ({ movie }) => {
     return (
-        <div className="movie-card">
+        <div className="container">
            <div>
             <p>
                 {movie.Year}
             </p>
             <div>
-                <img src="" alt="" />
+                <img src={movie.Poster !== "N/A"? movie.Poster : 'https://via.placeholder.com/400'} alt={movie.Title} />
             </div>
             <div>
                 <span>
