@@ -2,21 +2,19 @@ import React from "react";
 
 const MovieCard = ({ movie }) => {
     return (
-        <div className="container">
-           <div>
-            <p>
-                {movie.Year}
-            </p>
-            <div>
-                <img src={movie.Poster !== "N/A"? movie.Poster : 'https://via.placeholder.com/400'} alt={movie.Title} />
+        <div className="movie-card-container">
+            <div className="movie-img">
+                <img className="mov-img"  src={movie.Poster !== "N/A"? movie.Poster : 'https://via.placeholder.com/400'} alt={movie.Title} />
             </div>
-            <div>
+            <div className="detail">
                 <span>
                     {movie.Type}
                 </span>
-                <h3>{movie.Title}</h3>
+                <p>
+                    {movie.Year}
+                </p>
             </div>
-           </div>
+            <h4>{movie.Title}</h4>
         </div>
     );
 };
