@@ -20,41 +20,38 @@ const App = () => {
         setMovies(data.Search);
     };
 
-  return (
-    <div className="app">
-      <h1>Film Galore</h1>
-      <form className="search" onSubmit={(e) => {
-          e.preventDefault();
-            searchMovies()
-        }}>
-            <input 
-                type="text" 
-                placeholder="Search for a movie" 
-                value = {searchValue}
-                onChange={(e)=> setSearchValue(e.target.value)}
-            />
-            <button className="search-button" type="submit" ><FaSearch /></button>
-        </form>
+    return (
+        <div className="app">
+            <h1>Film Galore</h1>
+            <form className="search" onSubmit={(e) => {
+                e.preventDefault();
+                searchMovies()
+            }}>
+                <input
+                    type="text"
+                    placeholder="Search for a movie"
+                    value={searchValue}
+                    onChange={(e) => setSearchValue(e.target.value)}
+                />
+                <button className="search-button" type="submit" ><FaSearch /></button>
+            </form>
 
-        {
-            movies?.length >0
-            ?( <div className="container">
-                {movies.map((movie, index) => (
-                    <MovieCard key={index} movie={movie}  />
-                ))}
-                </div>
-            ) :
-            (
-                <div>
-                    <h2>No movies found</h2>
-                </div>
-            )
-        }
-       
-        
-       
-    </div>
-  );
+            {
+                movies?.length > 0
+                    ? (<div className="container">
+                        {movies.map((movie, index) => (
+                            <MovieCard key={index} movie={movie} />
+                        ))}
+                    </div>
+                    ) :
+                    (
+                        <div>
+                            <h2>No movies found</h2>
+                        </div>
+                    )
+            }
+        </div>
+    );
 }
 
 export default App;
