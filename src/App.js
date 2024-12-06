@@ -5,7 +5,7 @@ import MovieCard from './MovieCard';
 import { FaSearch } from "react-icons/fa";
 
 
-const API_URl = ' http://www.omdbapi.com/?i=tt3896198&apikey=5cfdfd5f'
+const API_URl = 'https://www.omdbapi.com/?i=tt3896198&apikey=5cfdfd5f'
 const App = () => {
     const [movies, setMovies] = useState([]);
 
